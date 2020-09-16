@@ -1,0 +1,16 @@
+title 0.6: single page app - new note diagram
+
+actor user
+user->browser: Inputs new note's text
+user->browser: Clicks the button
+
+note over browser:
+browser executes the event handler
+that:
+- adds new note to the 'notes' array
+- rerenders 'notes' to display
+- sends new note's data to server
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+server-->browser: Status 201: new note created
